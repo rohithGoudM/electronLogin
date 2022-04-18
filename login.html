@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+    <h1>Login with Google</h1>
+    <!-- <p>Current theme source: <strong id="theme-source">Light</strong></p> -->
+    <p id="console">Something</p>
+    <button id="loginWithGoogle">SupaLogin</button>
+
+    <script>
+        
+document.getElementById('loginWithGoogle').addEventListener('click', async () => {
+  document.getElementById('console').innerHTML = 'btn clicked'
+  const user = await window.auth.login()
+  document.getElementById('console').innerHTML = window.location.href;
+  document.getElementById('userDetails').innerHTML = user
+})
+    </script>
+  </body>
+</body>
+</html>

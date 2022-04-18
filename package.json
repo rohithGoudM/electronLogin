@@ -1,0 +1,16 @@
+{
+  "name": "electron-app",
+  "version": "1.0.0",
+  "description": "Hello World",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rohith Goud",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^1.34.1",
+    "electron": "^18.0.4"
+  }
+}
