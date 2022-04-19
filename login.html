@@ -17,8 +17,8 @@
 document.getElementById('loginWithGoogle').addEventListener('click', async () => {
   document.getElementById('console').innerHTML = 'btn clicked'
   const user = await window.auth.login()
-  document.getElementById('console').innerHTML = window.location.href;
-  document.getElementById('userDetails').innerHTML = user
+  document.getElementById('console').innerHTML = 'Loading... Please Wait';
+  // document.getElementById('userDetails').innerHTML = user
 })
     </script>
   </body>

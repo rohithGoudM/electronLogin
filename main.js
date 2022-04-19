@@ -10,6 +10,8 @@ const SUPABASE_URL = "https://wfxqibzqdhmxfnumlkaw.supabase.co"
 
 function createWindow () {
 	const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+	console.log(app.getAppPath())
+	// console.log(supabase.auth)
   const win = new BrowserWindow({
     width: 800,
     height: 600,
@@ -22,14 +24,23 @@ function createWindow () {
 
   ipcMain.handle('login',async ()=>{
   	console.log('before supabase auth signIn')
-		let { user, session, error } = await supabase.auth.signIn({
-		  provider: 'google'
-		})
-		console.log(user)
-		console.log(error)
-		user = {'namee':'kgf','year':2022}
-		win.loadFile('index.html')
-		return user
+		// let { user, session, error } = await supabase.auth.signIn({
+		//   provider: 'google'
+		// })
+		// supabase.auth.signIn({
+		//   provider: 'google'
+		// }).then(({user, session, error}) => {
+		// 	win.loadFile('index.html')
+		// console.log('user '+user)
+		// console.log('error' +error)
+		// 	return user
+		// })
+		// console.log('second user '+user)
+		// console.log('second error' +error)
+		// win.loadFile('index.html')
+		// return user
+		// win.loadURL('https://wfxqibzqdhmxfnumlkaw.supabase.co/auth/v1/authorize?provider=google')
+		win.loadURL('https://wfxqibzqdhmxfnumlkaw.supabase.co/auth/v1/authorize?provider=google')
   })
 
   ipcMain.handle('logout', async ()=>{
